@@ -2,6 +2,8 @@
 # Disclaimer: This algorithm is for educational and experimental purposes only and is not intended for real trading or financial decision-making.
 
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+
 import yfinance as yf
 import numpy as np
 
@@ -23,6 +25,7 @@ def pairs(tickerA, tickerB, tradingThreshold, showPlot):
     a_last, b_last = None, None
 
     ratios = {}
+    gains = {}
 
     tradeEngaged = False
 
@@ -65,7 +68,13 @@ def pairs(tickerA, tickerB, tradingThreshold, showPlot):
                 longGain = row[longBasis[1]]/longBasis[0]-1
                 shortGain = -1*(row[shortBasis[1]]/shortBasis[0]-1)
 
-                gainIndex = gainIndex * (1 + longGain) * (1 + shortGain)
+                weight = 0.2
+                newGainIndex = gainIndex * (1 + longGain * weight) * (1 + shortGain * weight)
+                totalGain = newGainIndex / gainIndex - 1
+                gainIndex = newGainIndex
+
+                gains[date] = gainIndex-1
+
                 # print('gain index update: ', gainIndex)
 
                 print("Long gain: ", longGain, f" (Bought {longBasis[0]} and sold {row[longBasis[1]]})")
@@ -90,11 +99,16 @@ def pairs(tickerA, tickerB, tradingThreshold, showPlot):
 
     if showPlot:
         plt.figure(figsize=(10, 5))
+        
+        ax2 = plt.gca().twinx()
+        ax2.plot(gains.keys(), gains.values(), marker='s', color='g', markersize=2, label='Gains')
+        ax2.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: f'{x * 100:.0f}%'))
+
         plt.plot(ratios.keys(), ratios.values(), marker='o', color='b', markersize=2)
 
         plt.title(f"Pairs: {tickerA} / {tickerB}", fontsize=14)
         plt.xlabel('Date', fontsize=12)
-        plt.ylabel('Pairs Ratio', fontsize=12)
+        plt.ylabel('', fontsize=12) #pairs ratio
 
         plt.grid(False)
         plt.xticks(rotation=45)
@@ -105,6 +119,10 @@ def pairs(tickerA, tickerB, tradingThreshold, showPlot):
 
         plt.axhline(y=tail_up, color='r', linestyle='--')
         plt.axhline(y=tail_down, color='r', linestyle='--')
+
+
+
+
 
         plt.show()
 
@@ -134,7 +152,7 @@ def findBestPair(pairsToTest):
 def getInput():
     newStockA = input("Enter new ticker A: ")
     newStockB = input("Enter new ticker B: ")
-    pairs(newStockA, newStockB, 0.1, True)
+    pairs(newStockA, newStockB, 0.074, True)
     getInput()
 
 testList = [
