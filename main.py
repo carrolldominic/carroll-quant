@@ -155,41 +155,5 @@ def getInput():
     pairs(newStockA, newStockB, 0.074, True)
     getInput()
 
-testList = [
-    ['AAPL', 'MSFT'],   # Technology: Apple vs. Microsoft
-    ['GOOG', 'META'],   # Technology/Online: Google vs. Meta (Facebook)
-    ['TSLA', 'RIVN'],   # Electric Vehicles: Tesla vs. Rivian
-    ['NVDA', 'AMD'],    # Semiconductors: NVIDIA vs. AMD
-    ['AMD', 'INTC'],    # Semiconductors: AMD vs. Intel
-    ['V', 'MA'],        # Payments: Visa vs. Mastercard
-    ['JPM', 'GS'],      # Banking/Finance: JPMorgan Chase vs. Goldman Sachs
-    ['BABA', 'AMZN'],   # E-commerce: Alibaba vs. Amazon
-    ['WMT', 'TGT'],     # Retail: Walmart vs. Target
-    ['DIS', 'CMCSA'],   # Media/Entertainment: Disney vs. Comcast
-    ['PEP', 'KO'],      # Beverages: PepsiCo vs. Coca-Cola
-    ['MCD', 'YUM'],     # Restaurants: McDonald's vs. Yum! Brands
-    ['PG', 'CL'],       # Consumer Goods: Procter & Gamble vs. Colgate-Palmolive
-    ['XOM', 'CVX'],     # Energy: ExxonMobil vs. Chevron
-    ['LMT', 'BA'],      # Aerospace/Defense: Lockheed Martin vs. Boeing
-    ['MDT', 'ABT'],     # Healthcare/Medical Devices: Medtronic vs. Abbott Laboratories
-    ['CAT', 'DE'],      # Heavy Machinery: Caterpillar vs. Deere & Co.
-    ['UNH', 'CVS'],     # Healthcare: UnitedHealth vs. CVS Health
-    ['AMT', 'CCI'],     # Telecom Infrastructure: American Tower vs. Crown Castle
-    ['T', 'VZ'],        # Telecommunications: AT&T vs. Verizon
-    ['WBA', 'CVS'],     # Retail/Healthcare: Walgreens Boots Alliance vs. CVS Health
-    ['PFE', 'MRK'],     # Pharmaceuticals: Pfizer vs. Merck
-    ['LUV', 'DAL'],     # Airlines: Southwest Airlines vs. Delta Air Lines
-    ['AIG', 'TRV'],     # Insurance: AIG vs. Travelers
-    ['CSCO', 'ORCL'],   # Technology/Software: Cisco vs. Oracle
-    ['NKE', 'ADIDY'],   # Apparel/Footwear: Nike vs. Adidas
-    ['FIS', 'FISV'],    # Payment Services: FIS vs. Fiserv
-    ['SBUX', 'DNKN'],   # Coffee: Starbucks vs. Dunkin' Brands
-    ['SO', 'EXC'],      # Utilities: Southern Co. vs. Exelon
-    ['NFLX', 'DIS'],    # Media/Entertainment: Netflix vs. Disney
-    ['SHW', 'PPG'],     # Paints/Coatings: Sherwin-Williams vs. PPG Industries
-    ['RTX', 'GD'],      # Aerospace/Defense: Raytheon Technologies vs. General Dynamics
-    ['ZM', 'TEAM']      # Collaboration Software: Zoom vs. Atlassian
-]
-
 # findBestPair(testList)
 getInput()
