@@ -69,7 +69,8 @@ def pairs(tickerA, tickerB, tradingThreshold, showPlot):
                 shortGain = -1*(row[shortBasis[1]]/shortBasis[0]-1)
 
                 weight = 0.2
-                newGainIndex = gainIndex * (1 + longGain * weight) * (1 + shortGain * weight)
+                leverageRatio = 1
+                newGainIndex = gainIndex * (1 + longGain * weight * leverageRatio) * (1 + shortGain * weight * leverageRatio)
                 totalGain = newGainIndex / gainIndex - 1
                 gainIndex = newGainIndex
 
