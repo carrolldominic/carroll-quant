@@ -49,7 +49,7 @@ cd carroll-quant
 Execute the Python script that implements the pairs trading strategy:
 
 ```bash
-python pairs_trading_algorithm.py
+python3 main.py
 ```
 
 ### How It Works
