@@ -1,6 +1,6 @@
 # Pairs Trading Algorithm
 
-This repository contains the **Pairs Trading Algorithm** implemented in Python. The algorithm utilizes statistical arbitrage strategies to trade two correlated stocks by capitalizing on their relative price movements. It enters long and short positions when the price spread between two assets deviates from historical norms.
+This repository contains a **Pairs Trading Algorithm** implemented in Python. The algorithm utilizes statistical arbitrage strategies to trade two correlated stocks by capitalizing on their relative price movements. It enters long and short positions when the price spread between two assets deviates from historical norms.
 
 ![Pairs Trading Algorithm](https://i.imgur.com/IhOBiOT.jpeg)
 
